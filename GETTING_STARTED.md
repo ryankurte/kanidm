@@ -20,7 +20,9 @@ the database:
     docker volume create kanidmd
 
 You should have a ca.pem, cert.pem and key.pem in your kanidmd volume. It's up to you to put them
-in there some how.
+in there some how. Should you need, you can copy them from your current directory into the volume using:
+
+    docker run --rm -it -v kanidmd:/kanidmd -v`pwd`:/work apline cp /work/cert.pem /work/cert.key /work/ca.pem /kanidmd/
 
 Then you can setup the initial admin account and initialise the database into your volume.
 
